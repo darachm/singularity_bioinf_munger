@@ -1,0 +1,22 @@
+Bootstrap: docker
+From: ubuntu:bionic-20190307
+
+%labels
+MAINTAINER darachm
+DATE 191211
+
+%help
+
+    Bioinformatics munger container, so stuff like 
+    samtools, sqlite3, gawk, perl
+    
+%post
+
+    apt-get -y update
+    apt-get -y install sqlite3 samtools gawk perl graphviz 
+    apt-get -y install curl gzip git wget g++ gcc-4.8 gawk
+    apt-get -y install gnupg2 software-properties-common 
+
+%test
+
+    # ?
